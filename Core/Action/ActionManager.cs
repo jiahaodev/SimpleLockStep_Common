@@ -1,9 +1,9 @@
-/****************************************************
-	ÎÄ¼ş£ºActionManager.cs
-	×÷Õß£ºJiahaoWu
-	ÓÊÏä: jiahaodev@163.ccom
-	ÈÕÆÚ£º2020/02/10 22:58   	
-	¹¦ÄÜ£ºÊÂ¼ş¹ÜÀíÀà
+ï»¿/****************************************************
+	æ–‡ä»¶ï¼šActionManager.cs
+	ä½œè€…ï¼šJiahaoWu
+	é‚®ç®±: jiahaodev@163.ccom
+	æ—¥æœŸï¼š2020/02/10 22:58   	
+	åŠŸèƒ½ï¼šäº‹ä»¶ç®¡ç†ç±»
 *****************************************************/
 
 using System;
@@ -13,10 +13,10 @@ using System.Collections.Generic;
 public class ActionManager {
 
     List<BaseAction> m_listAction = new List<BaseAction>();
+    public bool m_bEnable = true;
+    public bool enable { get { return m_bEnable; } set { m_bEnable = value; } }
 
-    public bool enable { get; set; }
-
-    //¸üĞÂÂß¼­
+    //æ›´æ–°é€»è¾‘
     public void updateLogic() {
 
         for (int i = 0; i < m_listAction.Count; i++)
@@ -48,7 +48,7 @@ public class ActionManager {
 
 
     public void stopAction(string label) {
-        for (int i = m_listAction.Count; i >= 0; i--)
+        for (int i = m_listAction.Count - 1; i >= 0; i--)
         {
             if (m_listAction[i].label == label)
             {
