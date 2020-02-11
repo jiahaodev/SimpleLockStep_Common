@@ -8,7 +8,7 @@
 
 using System.Collections;
 
-public class BullectFactory {
+public class BulletFactory {
 
     string m_scBulletName = "";
 
