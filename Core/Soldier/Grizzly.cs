@@ -25,7 +25,7 @@ public class Grizzly : BaseSoldier
 
     public override void loadProperties()
     {
-        hp = (Fix64)200;
+        hp = (Fix64)800;
     }
 
 }
