@@ -14,7 +14,7 @@ public class BattleLogic
 
 
     //帧同步核心逻辑对象
-    LockStopLogic m_lockStepLogic = null;
+    LockStepLogic m_lockStepLogic = null;
 
     //战斗日志
     string battleRecord = "";
@@ -117,7 +117,7 @@ public class BattleLogic
     {
         UnityTools.Log("BattleLogic init!");
         //初始化游戏帧同步逻辑对象
-        m_lockStepLogic = new LockStopLogic();
+        m_lockStepLogic = new LockStepLogic();
         m_lockStepLogic.setCallUnit(this);
 
         //游戏运行速度
@@ -183,7 +183,7 @@ public class BattleLogic
         {
             //销毁战场上所有对象
             //塔
-            for (int i = GameData.g_listTower.Count; i >= 0; i--)
+            for (int i = GameData.g_listTower.Count-1; i >= 0; i--)
             {
                 GameData.g_listTower[i].killSelf();
             }
@@ -203,9 +203,10 @@ public class BattleLogic
                 recordBattleInfo();
 #if _CLIENTLOGIC_
                 //如果是客户端，将本地的战斗消息发送到服务端进行校验
-                SimpleSocket socket = new SimpleSocket();
-                socket.Init();
-                socket.sendBattleRecordToServer(UnityTools.playerPrefsGetString("battleRecord"));
+				//todo
+                //SimpleSocket socket = new SimpleSocket();
+                //socket.Init();
+                //socket.sendBattleRecordToServer(UnityTools.playerPrefsGetString("battleRecord"));
 #endif
             }
 
