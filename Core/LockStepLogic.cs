@@ -10,7 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class LockStopLogic
+public class LockStepLogic
 {
     //累积运行的时间
     float m_fAccumilatedTime = 0;
@@ -27,7 +27,7 @@ public class LockStopLogic
     //挂载的逻辑对象
     BattleLogic m_callUnit = null;
 
-    public LockStopLogic() {
+    public LockStepLogic() {
         init();
     }
 
