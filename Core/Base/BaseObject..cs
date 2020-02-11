@@ -137,6 +137,7 @@ public class BaseObject : UnityObject
                 UnityTools.LogError("wrong type : " + m_scType);
             }
 
+            destroyGameObject();
         }
     }
 
