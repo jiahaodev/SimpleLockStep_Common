@@ -14,7 +14,8 @@ public class BaseAction
 
     public ActionCallback actionCallbackFunc { get; set; }
 
-    public bool enable { get; set; }
+    private bool m_bEnable = true;
+    public bool enable { get { return m_bEnable; } set { m_bEnable = value; } }
 
     public string name { get; set; }
 
@@ -30,6 +31,11 @@ public class BaseAction
         {
             manager.removeAction(this);
         }
+    }
+
+    public void setBelongToManager(ActionManager manager)
+    {
+        this.manager = manager;
     }
 
     public virtual void updateLogic() { }
