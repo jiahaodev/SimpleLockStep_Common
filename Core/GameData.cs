@@ -34,7 +34,7 @@ public class GameData
     //塔工厂
     public static TowerFactory g_towerFactory = new TowerFactory();
     //子弹工厂
-    public static BullectFactory g_bulletManager = new BullectFactory();
+    public static BulletFactory g_bulletManager = new BulletFactory();
     //action主管理器
     //（用于管理个liveobject内部的独立actionManager）
     public static ActionMainManager g_actionMainManager = new ActionMainManager();
