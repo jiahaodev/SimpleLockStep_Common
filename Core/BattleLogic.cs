@@ -203,9 +203,9 @@ public class BattleLogic
                 recordBattleInfo();
 #if _CLIENTLOGIC_
                 //如果是客户端，将本地的战斗消息发送到服务端进行校验
-                //SimpleSocket socket = new SimpleSocket();
-                //socket.Init();
-                //socket.sendBattleRecordToServer(UnityTools.playerPrefsGetString("battleRecord"));
+                SimpleSocket socket = new SimpleSocket();
+                socket.Init();
+                socket.sendBattleRecordToServer(UnityTools.playerPrefsGetString("battleRecord"));
 #endif
             }
 
