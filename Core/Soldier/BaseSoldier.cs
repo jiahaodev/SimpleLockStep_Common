@@ -22,7 +22,7 @@ public class BaseSoldier : LiveObject {
 
     public void move() {
         //Ìø×ªµ½ÒÆ¶¯×´Ì¬
-        changeState("solidermove");
+        changeState("soldiermove");
     }
 
     public virtual void updateLogic() {
