@@ -93,28 +93,45 @@ public class BaseObject : UnityObject
             //停止所有DelayDo实例
             stopActionByName("DelayDo");
 
+            //塔
             if (m_scType == "tower")
             {
+
                 for (int i = GameData.g_listTower.Count - 1; i >= 0; i--)
                 {
-                    if (GameData.g_listTower[i] == this)
+                    if (this == GameData.g_listTower[i])
                     {
-                        GameData.g_listTower.RemoveAt(i);
+                        GameData.g_listTower.Remove(GameData.g_listTower[i]);
+                        break;
+                    }
+                }
+
+            }
+            //士兵
+            else if (m_scType == "soldier")
+            {
+                for (int i = GameData.g_listSoldier.Count - 1; i >= 0; i--)
+                {
+                    if (this == GameData.g_listSoldier[i])
+                    {
+                        GameData.g_listSoldier.Remove(GameData.g_listSoldier[i]);
                         break;
                     }
                 }
             }
+            //子弹
             else if (m_scType == "bullet")
             {
                 for (int i = GameData.g_listBullet.Count - 1; i >= 0; i--)
                 {
-                    if (GameData.g_listBullet[i] == this)
+                    if (this == GameData.g_listBullet[i])
                     {
-                        GameData.g_listBullet.RemoveAt(i);
+                        GameData.g_listBullet.Remove(GameData.g_listBullet[i]);
                         break;
                     }
                 }
             }
+            //其它
             else
             {
                 UnityTools.LogError("wrong type : " + m_scType);
